@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import VideosContainer from "../../components/VideosContainer";
 
 const HotelIframe = () => {
   return (
@@ -15,6 +17,12 @@ const HotelIframe = () => {
 };
 
 export default function WhoWe() {
+  const videos = [
+    "https://www.youtube.com/embed/iGgBsoLe2Wk",
+    "https://www.youtube.com/embed/5_vYZhw_2o0",
+    "https://www.youtube.com/embed/KIBD1Ir3DOo",
+    "https://www.youtube.com/embed/jevfn7qgfos",
+  ];
   return (
     <>
       <div className="who_we_container">
@@ -27,25 +35,27 @@ export default function WhoWe() {
           <div className="who_we_container_left">
             <div
               style={{ color: "#7878", letterSpacing: "6px", marginBottom: 8 }}
-              className="para"
+              className="para about-us-heading"
             >
               ABOUT US
             </div>
             <div style={{ color: "#fff" }} className="hero_heading">
               Who We Are
             </div>
-            <div style={{ textAlign: "start" }} className="para">
-              Nestled in Museyo next to Eleko, just one hour by road from Lekki
-              Phase One, Jara Beach Resort is the first of its kind,
-              award-winning, all-inclusive, family-run, oceanfront getaway in
-              Lagos.
+            <div style={{ textAlign: "start" }} className="para hero_details">
+              Nestled in Museyo next to Eleko, just one hour by road from Lekki Phase One, Jara
+              Beach Resort is the first of its kind, award-winning, all-inclusive, family-run,
+              oceanfront getaway in Lagos.
             </div>
-            <button style={{ marginTop: 20 }} className="white_button">
-              Learn More
-            </button>
+            <Link to="/about">
+              <button style={{ marginTop: 20 }} className="white_button">
+                Learn More
+              </button>
+            </Link>
           </div>
           <div className="who_we_container_right">
-            <div className="who_we_container_right_entry">
+            <VideosContainer id="who_we" videos={videos} limit={4} btn={false} />
+            {/*  <div className="who_we_container_right_entry">
               <iframe
                 width="560"
                 height="315"
@@ -88,7 +98,7 @@ export default function WhoWe() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               ></iframe>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

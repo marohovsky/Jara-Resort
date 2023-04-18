@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.scss";
 import Home from "./screens/Home";
 import Header from "./components/Header";
@@ -18,29 +18,89 @@ import AllInclusive from "./screens/AllInclusive";
 import ChildrenView from "./screens/ChildrenView";
 import BoatTransport from "./screens/BoatTransport";
 import ResponsibleHospitality from "./screens/ResponsibleHospitality";
+import ContentCreators from "./screens/ContentCreators";
+import CarServices from "./screens/CarServices";
+import DayPass from "./screens/DayPass";
+import Covid19 from "./screens/Covid19";
+import OvernightExperiencesAndBooking from "./screens/OvernightExperiencesAndBooking";
+import BusinessRetreat from "./screens/BusinessRetreat";
+import Complaints from "./screens/Complaints";
+import BookingAdditions from "./screens/BookingAdditions";
+import Weddings from "./screens/Weddings";
+import BriefHistory from "./screens/BreifHistory";
+import Menus from "./screens/Menus";
+import MuseyoCommunityYouthsTollgate from "./screens/MuseyoCommunityYouthsTollgate";
+import Packages from "./screens/Packages";
+import PremiumCollection from "./screens/PremiumCollection";
+import PrivateParties from "./screens/PrivateParties";
+import Photoshoots from "./screens/Photoshoots";
+import Vouchers from "./screens/Vouchers";
+import SpecialRequests from "./screens/SpecialRequests";
+import Photos from "./screens/Photos";
+import JoinUs from "./screens/JoinUs";
+import FAQs from "./screens/FAQs";
+import Taxes from "./screens/Taxes";
+import JaraForGood from "./screens/JaraForGood";
 
 export default function App() {
-  AOS.init();
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  AOS.init({
+    once: true,
+  });
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/rooms" element={<RoomsView />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/media" element={<Media />} />
-        <Route path="/events" element={<EventsBooking />} />
-        <Route path="/about" element={<About />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/rooms" element={<RoomsView />} />
+        <Route exact path="/gallery" element={<Gallery />} />
+        <Route exact path="/history" element={<BriefHistory />} />
+        <Route exact path="/media" element={<Media />} />
+        <Route exact path="/events" element={<EventsBooking />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/photo" element={<About />} />
+        <Route exact path="/experiences" element={<ExperiencesView />} />
+        <Route exact path="/activities" element={<Activities />} />
+        <Route exact path="/children" element={<ChildrenView />} />
+        <Route exact path="/boat-transport" element={<BoatTransport />} />
+        <Route exact path="/contact" element={<Contact />} />
+
+        <Route exact path="/jara-for-good" element={<JaraForGood />} />
+        <Route path="/taxes" element={<Taxes />} />
+        <Route path="/faqs" element={<FAQs />} />
+        <Route path="/join-us" element={<JoinUs />} />
+        <Route path="/photos" element={<Photos />} />
+        <Route path="/special-requests" element={<SpecialRequests />} />
+        <Route exact path="/vouchers" element={<Vouchers />} />
+        <Route exact path="/photoshoots" element={<Photoshoots />} />
+        <Route exact path="/private-parties" element={<PrivateParties />} />
+        <Route exact path="/premium-collection" element={<PremiumCollection />} />
+        <Route exact path="/packages" element={<Packages />} />
+        <Route exact path="/booking-additions" element={<BookingAdditions />} />
+        <Route exact path="/weddings" element={<Weddings />} />
+        <Route exact path="/menus" element={<Menus />} />
+        <Route exact path="/responsible-hospitality" element={<ResponsibleHospitality />} />
+        <Route exact path="/all-inclusive" element={<AllInclusive />} />
+        <Route exact path="/car-services" element={<CarServices />} />
+        <Route exact path="/day-pass" element={<DayPass />} />
+        <Route exact path="/complaints" element={<Complaints />} />
         <Route
-          path="/responsible-hospitality"
-          element={<ResponsibleHospitality />}
+          exact
+          path="/museyo-community-youths-tollgate"
+          element={<MuseyoCommunityYouthsTollgate />}
         />
-        <Route path="/experiences" element={<ExperiencesView />} />
-        <Route path="/activities" element={<Activities />} />
-        <Route path="/all-inclusive" element={<AllInclusive />} />
-        <Route path="/children" element={<ChildrenView />} />
-        <Route path="/boat-transport" element={<BoatTransport />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route exact path="/covid-19" element={<Covid19 />} />
+        <Route exact path="/content-creators" element={<ContentCreators />} />
+        <Route exact path="/business-retreat" element={<BusinessRetreat />} />
+        <Route
+          exact
+          path="/overnight-experiences-and-booking"
+          element={<OvernightExperiencesAndBooking />}
+        />
       </Routes>
       <Footer />
     </>

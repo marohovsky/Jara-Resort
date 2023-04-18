@@ -24,7 +24,7 @@ const GuestCard = ({ item }) => {
         />
       </svg>
       <div style={{ textAlign: "center" }} className="guest_says_card_para">
-        {item?.text}
+        {item?.text.substring(0, 300) + "..."}
       </div>
 
       <div
@@ -95,11 +95,8 @@ export default function HomeSwiper({ reviews }) {
         loop={true}
         autoplay={true}
         loopFillGroupWithBlank={true}
-        pagination={{
-          clickable: false,
-        }}
         navigation={false}
-        modules={[Pagination, Navigation]}
+        modules={[Navigation]}
         className="mySwiper"
       >
         {reviews &&

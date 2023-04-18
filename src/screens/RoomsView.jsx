@@ -2,10 +2,90 @@ import React, { useState } from "react";
 import GetTouch from "./home-sub-component/GetTouch";
 import MapView from "./home-sub-component/MapView";
 import RoomPic from "../assets/rooms/Villa.png";
+import standardImg from "../assets/rooms/standard.webp";
+import familyImg from "../assets/rooms/family.webp";
+import villaImg from "../assets/rooms/villa.webp";
+import loftImg from "../assets/rooms/loft.webp";
+
+import { Link } from "react-router-dom";
 
 const data = [1, 2, 3, 4, 5, 6, 7, 78, 8, 9];
 
-function RoomCard() {
+export default function RoomsView() {
+  const rooms = [
+    {
+      img: standardImg,
+      title: "ocean-front balcony standard room",
+      desc: "",
+      size: "2 x Adults ",
+      price: "200,000",
+    },
+    {
+      img: familyImg,
+      title: "family room & cabins, ocean-front balcony",
+      desc: "",
+      size: " 3 x Adults or 2 x Adults + 1 Infant",
+      price: "250,000",
+    },
+    {
+      img: villaImg,
+      title: "the villas provide an immersive ocean-front view",
+      desc: "",
+      size: "2 x Adults ",
+      price: "375,000",
+    },
+    {
+      img: loftImg,
+      title: "family deluxe room, with ocean-facing balcony",
+      desc: "",
+      size: "3 x Adults or 2 x Adults + 1 Infant ",
+      price: "300,000",
+    },
+  ];
+  return (
+    <>
+      <div className="components_section">
+        <div
+          data-aos="zoom-out"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          style={{ color: "#fff", fontSize: 40 }}
+          className="hero_heading"
+        >
+          Rooms
+        </div>
+      </div>
+      <div className="components_section_content">
+        <div
+          style={{
+            color: "#787878",
+            width: "100%",
+            maxWidth: "800px",
+            margin: "0px auto",
+            padding: "2em 0em",
+          }}
+          className="para rooms_heading_details"
+        >
+          Jara has 12 exquisite, ocean-facing rooms:5 x standard (with queen bed ideal for couples
+          or young small families with an infant only) - Rooms 1-55 x family rooms (queen or king
+          bed with 2 x 4foot mattress bunk bed) - Rooms 6-9 + Family Deluxe Room 12 (The Loft) 2 x
+          stunning, two-floor oceanfront villas (with king four-poster bed with pull-out / sofa bed)
+          - Rooms 11 and 12
+        </div>
+      </div>
+
+      <div className="rooms_view_card_container">
+        {rooms.map((room, index) => (
+          <RoomCard key={index} {...room} />
+        ))}
+      </div>
+      <GetTouch />
+      <MapView />
+    </>
+  );
+}
+
+function RoomCard({ title, img, desc, size, price }) {
   return (
     <div
       data-aos="fade-up"
@@ -13,14 +93,11 @@ function RoomCard() {
       data-aos-duration="1000"
       className="rooms_view_card"
     >
-      <img src={RoomPic} alt="RoomPic" className="rooms_view_card_img" />
-      <div className="rooms_view_heading">
-        ocean-front balcony standard room
-      </div>
+      <img src={img} alt={title} className="rooms_view_card_img" />
+      <div className="rooms_view_heading">{title}</div>
       <div className="para">
-        The most exclusive beach rooms in the country. Room 10 (“Sunrise”) and
-        11 (“Sunset”) - two of the most beautiful, immersive oceanfront rooms in
-        the country (and perhaps beyond!)
+        The most exclusive beach rooms in the country. Room 10 (“Sunrise”) and 11 (“Sunset”) - two
+        of the most beautiful, immersive oceanfront rooms in the country (and perhaps beyond!)
       </div>
       <div className="rooms_view_heading_row">
         <svg
@@ -35,7 +112,7 @@ function RoomCard() {
             fill="#838383"
           />
         </svg>
-        2 Adults + 2 Childes
+        {size}
       </div>
       <div className="rooms_view_heading_row">
         <svg
@@ -69,72 +146,18 @@ function RoomCard() {
           Sunset view
         </div>
         <div className="rooms_view_heading_price">
-          <span>Per Night</span>
-          N50,000
+          <span>Per Night</span>N{price}
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginTop: "2em",
-        }}
-      >
-        <button
-          style={{ marginRight: "1em", padding: 12, width: "48%" }}
-          className="black_button"
-        >
-          View Details
-        </button>
-        <button style={{ padding: 12, width: "48%" }} className="white_button">
-          Book Now
-        </button>
+      <div className="card_btn">
+        <Link to={"/overnight-experiences-and-booking"}>
+          <button className="black_button">View Details</button>
+        </Link>
+
+        <a href="https://booking.jarabeachresort.com/">
+          <button className="white_button">Book Now</button>
+        </a>
       </div>
     </div>
-  );
-}
-export default function RoomsView() {
-  return (
-    <>
-      <div className="components_section">
-        <div
-          data-aos="zoom-out"
-          data-aos-delay="50"
-          data-aos-duration="1000"
-          style={{ color: "#fff", fontSize: 40 }}
-          className="hero_heading"
-        >
-          Rooms
-        </div>
-      </div>
-      <div className="components_section_content">
-        <div
-          style={{
-            color: "#787878",
-            width: "100%",
-            maxWidth: "800px",
-            margin: "0px auto",
-            padding: "2em 0em",
-          }}
-          className="para"
-        >
-          Jara has 12 exquisite, ocean-facing rooms:5 x standard (with queen bed
-          ideal for couples or young small families with an infant only) - Rooms
-          1-55 x family rooms (queen or king bed with 2 x 4foot mattress bunk
-          bed) - Rooms 6-9 + Family Deluxe Room 12 (The Loft) 2 x stunning,
-          two-floor oceanfront villas (with king four-poster bed with pull-out /
-          sofa bed) - Rooms 11 and 12
-        </div>
-      </div>
-
-      <div className="rooms_view_card_container">
-        {data.map((index) => (
-          <RoomCard key={index} />
-        ))}
-      </div>
-      <GetTouch />
-      <MapView />
-    </>
   );
 }

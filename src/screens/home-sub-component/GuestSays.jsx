@@ -13,14 +13,12 @@ export default function GuestSays() {
     const script = document.createElement("script");
     script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
     script.onload = () => {
-      const service = new window.google.maps.places.PlacesService(
-        document.createElement("div")
-      );
+      const service = new window.google.maps.places.PlacesService(document.createElement("div"));
       service.getDetails(
         {
           placeId: placeId,
           fields: ["reviews"],
-          maxRows: 40,
+          maxRows: 20,
         },
         (place, status) => {
           if (status === window.google.maps.places.PlacesServiceStatus.OK) {
@@ -39,10 +37,7 @@ export default function GuestSays() {
         data-aos-duration="1000"
         className="room_container"
       >
-        <div
-          style={{ color: "#7878", letterSpacing: "6px", marginBottom: 8 }}
-          className="para"
-        >
+        <div style={{ color: "#7878", letterSpacing: "6px", marginBottom: 8 }} className="para">
           GUEST REVIEWS
         </div>
         <div style={{ textAlign: "center" }} className="hero_heading">

@@ -29,7 +29,7 @@ export default function Header() {
           }}
           className="header__content__logo__mbl"
         >
-          <img src={logoDark} alt="logo" />
+          <img style={{ maxHeight: "100px" }} src={logoDark} alt="logo" />
         </Link>
         {isNavOpen ? (
           <div className="header__content__entry">
@@ -46,7 +46,7 @@ export default function Header() {
             >
               <img src={logoDark} alt="logo" />
             </Link>
-            <NavLink to="/events">Event Booking</NavLink>
+            <NavLink to="/overnight-experiences-and-booking">Event Booking</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/contact">Contact</NavLink>
           </div>

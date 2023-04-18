@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../assets/logo.png";
 import LogoAl from "../assets/Little Company Logo_transparent_white_pn 1.png";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -18,6 +19,7 @@ export default function Footer() {
             Off Lekki Free <br /> Trade Zone Road. Lagos.
           </div>
           <a
+            href="mailto:info@jarabeachresort.com"
             style={{
               display: "flex",
               alignItems: "center",
@@ -40,7 +42,7 @@ export default function Footer() {
                 fill="white"
               />
             </svg>
-            info@jarabeachre
+            info@jarabeachresort.com
           </a>
           <a
             style={{
@@ -48,7 +50,7 @@ export default function Footer() {
               alignItems: "center",
               justifyItems: "center",
             }}
-            className="footer_container_wrapper_col_entry"
+            className="footer_container_wrapper_col_entry footer_container_wrapper_col_entry-whatsapp-number "
           >
             <svg
               style={{ marginRight: 10 }}
@@ -69,82 +71,90 @@ export default function Footer() {
           </a>
         </div>
         <div className="footer_container_wrapper_col">
-          <div className="footer_container_wrapper_col_entry_header">
-            Services
+          <div className="footer_container_wrapper_col_entry_header">Services</div>
+
+          <div className="links">
+            <Link to="/rooms" className="footer_container_wrapper_col_entry">
+              Rooms Details
+            </Link>
+            <Link to="/car-services" className="footer_container_wrapper_col_entry">
+              Car Services
+            </Link>
+            <Link
+              to="/overnight-experiences-and-booking"
+              className="footer_container_wrapper_col_entry"
+            >
+              Overnight Booking
+            </Link>
+            <Link to="/day-pass" className="footer_container_wrapper_col_entry">
+              Day Pass Booking
+            </Link>
           </div>
-          <a href="" className="footer_container_wrapper_col_entry">
-            Rooms Details
-          </a>
-          <a href="" className="footer_container_wrapper_col_entry">
-            Car Services
-          </a>
-          <a href="" className="footer_container_wrapper_col_entry">
-            Overnight Booking
-          </a>
-          <a href="" className="footer_container_wrapper_col_entry">
-            Day Pass Booking
-          </a>
         </div>
         <div className="footer_container_wrapper_col">
-          <div className="footer_container_wrapper_col_entry_header">
-            Support
+          <div className="footer_container_wrapper_col_entry_header">Support</div>
+          <div className="links">
+            <Link to="/faqs" className="footer_container_wrapper_col_entry">
+              FAQs
+            </Link>
+            <Link
+              to="/responsible-hospitality"
+              href=""
+              className="footer_container_wrapper_col_entry"
+            >
+              Responsible Hospitality
+            </Link>
+            <Link to="/taxes" className="footer_container_wrapper_col_entry">
+              Taxes
+            </Link>
+            <Link to="/complaints" className="footer_container_wrapper_col_entry">
+              Complaints
+            </Link>
           </div>
-          <a href="" className="footer_container_wrapper_col_entry">
-            FAQs
-          </a>
-          <a href="" className="footer_container_wrapper_col_entry">
-            Responsible Hospitality
-          </a>
-          <a href="" className="footer_container_wrapper_col_entry">
-            Taxes
-          </a>
-          <a href="" className="footer_container_wrapper_col_entry">
-            Complaints
-          </a>
         </div>
         <div className="footer_container_wrapper_col">
-          <div className="footer_container_wrapper_col_entry_header">
-            Company
+          <div className="footer_container_wrapper_col_entry_header">Company</div>
+          <div className="links">
+            <Link to="/about" className="footer_container_wrapper_col_entry">
+              About
+            </Link>
+            <Link to="/history" className="footer_container_wrapper_col_entry">
+              History
+            </Link>
+            <Link to="/join-us" className="footer_container_wrapper_col_entry">
+              Join Us
+            </Link>
+            <Link to="/jara-for-good" className="footer_container_wrapper_col_entry">
+              Jara For Good
+            </Link>
+            <a href="" className="footer_container_wrapper_col_entry">
+              Partners
+            </a>
           </div>
-          <a href="" className="footer_container_wrapper_col_entry">
-            About
-          </a>
-          <a href="" className="footer_container_wrapper_col_entry">
-            History
-          </a>
-          <a href="" className="footer_container_wrapper_col_entry">
-            Join Us
-          </a>
-          <a href="" className="footer_container_wrapper_col_entry">
-            Jara For Good
-          </a>
-          <a href="" className="footer_container_wrapper_col_entry">
-            Partners
-          </a>
         </div>
         <div className="footer_container_wrapper_col">
           <div className="footer_container_wrapper_col_entry_header">Legal</div>
-          <a href="" className="footer_container_wrapper_col_entry">
-            About
-          </a>
-          <a href="" className="footer_container_wrapper_col_entry">
-            Claim
-          </a>
-          <a href="" className="footer_container_wrapper_col_entry">
-            Privacy
-          </a>
-          <a href="" className="footer_container_wrapper_col_entry">
-            Terms
-          </a>
+          <div className="links">
+            <a href="" className="footer_container_wrapper_col_entry">
+              About
+            </a>
+            <a href="" className="footer_container_wrapper_col_entry">
+              Claim
+            </a>
+            <a href="" className="footer_container_wrapper_col_entry">
+              Privacy
+            </a>
+            <a href="" className="footer_container_wrapper_col_entry">
+              Terms
+            </a>
+          </div>
         </div>
       </div>
       <div className="footer_footer">
         <img src={LogoAl} alt="LogoAl" />
         <div>
           <div className="para">© Jara beach resort</div>
-          <div className="para">
-            Owned and operated by Little Company Nigeria Limited
-          </div>
+          <div className="para">Owned and operated by Little Company Nigeria Limited</div>
         </div>
         <div>
           <div className="para">RC 1424441</div>

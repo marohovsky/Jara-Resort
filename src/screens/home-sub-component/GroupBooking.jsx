@@ -3,6 +3,7 @@ import wedding from "../../assets/wwdding.png";
 import Pic1 from "../../assets/group/Rectangle 71.png";
 import Pic2 from "../../assets/group/Rectangle 72.png";
 import Pic3 from "../../assets/group/Rectangle 73.png";
+import { Link } from "react-router-dom";
 
 export default function GroupBooking() {
   const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3];
@@ -14,10 +15,7 @@ export default function GroupBooking() {
         data-aos-duration="1000"
         className="room_container"
       >
-        <div
-          style={{ color: "#7878", letterSpacing: "6px", marginBottom: 8 }}
-          className="para"
-        >
+        <div style={{ color: "#7878", letterSpacing: "6px", marginBottom: 8 }} className="para">
           EVENT BOOKINGS
         </div>
         <div style={{ textAlign: "center" }} className="hero_heading">
@@ -26,20 +24,14 @@ export default function GroupBooking() {
         <div className="group_booking_container">
           <div className="group_booking_content_left">
             <div className="group_booking_content_left_card">
-              <img
-                src={wedding}
-                alt="wedding"
-                className="group_booking_content_left_card_img"
-              />
+              <img src={wedding} alt="wedding" className="group_booking_content_left_card_img" />
               <div className="group_booking_content_left_card_content">
-                <div className="group_booking_content_left_card_content_heading">
-                  Weddings
-                </div>
+                <div className="group_booking_content_left_card_content_heading">Weddings</div>
                 <div style={{ textAlign: "start" }} className="para">
-                  A wedding ceremony on a 30 foot terrace over looking the
-                  Atlantic Ocean?
+                  A wedding ceremony on a 30 foot terrace over looking the Atlantic Ocean?
                 </div>
-                <a
+                <Link
+                  to="/weddings"
                   style={{
                     color: "#fff",
                     textDecoration: "underline",
@@ -48,15 +40,11 @@ export default function GroupBooking() {
                   className="para"
                 >
                   Find out more
-                </a>
+                </Link>
               </div>
             </div>
             <div className="group_booking_content_left_card">
-              <img
-                src={wedding}
-                alt="wedding"
-                className="group_booking_content_left_card_img"
-              />
+              <img src={wedding} alt="wedding" className="group_booking_content_left_card_img" />
               <div className="group_booking_content_left_card_content">
                 <div className="group_booking_content_left_card_content_heading">
                   Business Retreats
@@ -64,7 +52,8 @@ export default function GroupBooking() {
                 <div style={{ textAlign: "start" }} className="para">
                   ARA offers an unparalleled team bonding getaway experience.
                 </div>
-                <a
+                <Link
+                  to="/business-retreat"
                   style={{
                     color: "#fff",
                     textDecoration: "underline",
@@ -73,24 +62,20 @@ export default function GroupBooking() {
                   className="para"
                 >
                   Find out more
-                </a>
+                </Link>
               </div>
             </div>
             <div className="group_booking_content_left_card">
-              <img
-                src={wedding}
-                alt="wedding"
-                className="group_booking_content_left_card_img"
-              />
+              <img src={wedding} alt="wedding" className="group_booking_content_left_card_img" />
               <div className="group_booking_content_left_card_content">
                 <div className="group_booking_content_left_card_content_heading">
                   Private Celebrations
                 </div>
                 <div style={{ textAlign: "start" }} className="para">
-                  The perfect choice for your pre-wedding party, bridal shower
-                  or anniversary.
+                  The perfect choice for your pre-wedding party, bridal shower or anniversary.
                 </div>
-                <a
+                <Link
+                  to="/private-parties"
                   style={{
                     color: "#fff",
                     textDecoration: "underline",
@@ -99,7 +84,7 @@ export default function GroupBooking() {
                   className="para"
                 >
                   Find out more
-                </a>
+                </Link>
               </div>
             </div>
           </div>
